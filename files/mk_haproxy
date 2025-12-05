@@ -6,8 +6,8 @@
 # shellcheck disable=SC2034
 CMK_VERSION="2.4.0p16"
 
-if [ -r /var/run/haproxy.stat ]; then
+if [ -r /var/run/haproxy.socket ]; then
 	echo "<<<haproxy:sep(44)>>>"
-	echo "show stat" | socat - UNIX-CONNECT:/var/run/haproxy.sock
+	echo "show stat" | socat - UNIX-CONNECT:/var/run/haproxy.socket
 fi
 

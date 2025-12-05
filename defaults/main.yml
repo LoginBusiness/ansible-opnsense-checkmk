@@ -8,6 +8,7 @@ opn_packages:
     - dmidecode
     - monitoring-plugins
     - jq
+    - py311-setuptools
 
 # in order to fetch the latest check_mk_agent.freebsd from a running checkmk server
 # define the hostname of the checkmk server;
@@ -42,7 +43,6 @@ opn_check_mk_patches:
 # the old list syntax opn_check_mk_local_checks: [] is still supported
 opn_check_mk_local_checks:
   all:
-    - check_powerunit.sh
     - crash_status.py
     - firmware_status.py
     - gateways_status.py
@@ -72,7 +72,8 @@ opn_check_mk_additional_files: {}
 # opn_check_mk_plugins:
 #     - wireguard
 #     - smart
-opn_check_mk_plugins: []
+opn_check_mk_plugins:
+  - mk_haproxy
 
 # set this to "{{ lookup('config', 'DEFAULT_LOCAL_TMP') | dirname }}"
 # to make the playbook multi user aware

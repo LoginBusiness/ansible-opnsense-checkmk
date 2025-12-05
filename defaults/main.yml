@@ -9,6 +9,7 @@ opn_packages:
     - monitoring-plugins
     - jq
     - py311-setuptools
+    - socat
 
 # in order to fetch the latest check_mk_agent.freebsd from a running checkmk server
 # define the hostname of the checkmk server;
